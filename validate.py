@@ -20,3 +20,10 @@ def validate_doi_schema42(instance):
         schema = json.loads(schema.read())
 
     validate(instance=instance, schema=schema)
+
+def validate_doi_schema43(instance):
+    jsonschema_43 = os.path.join(BASE_DIR, 'datacite/schemas/datacite-schema4.3.json')
+    with open(jsonschema_43) as schema:
+        schema = json.loads(schema.read())
+
+    validate(instance=instance, schema=schema)
