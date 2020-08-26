@@ -1,0 +1,23 @@
+.env
+env
+
+node_modules
+
+uploads
+
+*.sqlite3
+
+__pycache__
+
+migrations
+
+aws
+
+*.sql
+
+*.bak
+
+*.pgsql
+
+# Local Netlify folder
+.netlify
