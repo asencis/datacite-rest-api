@@ -14,16 +14,8 @@ from jsonschema import validate
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-def validate_doi_schema42(instance):
-    jsonschema_42 = os.path.join(BASE_DIR, 'datacite/schemas/datacite-schema4.2.json')
-    with open(jsonschema_42) as schema:
+def validate_doi_schema(instance, version=4.3):
+    jsonschema = os.path.join(BASE_DIR, 'datacite/schemas/datacite-schema{}.json'.format(version))
+    with open(jsonschema) as schema:
         schema = json.loads(schema.read())
-
-    validate(instance=instance, schema=schema)
-
-def validate_doi_schema43(instance):
-    jsonschema_43 = os.path.join(BASE_DIR, 'datacite/schemas/datacite-schema4.3.json')
-    with open(jsonschema_43) as schema:
-        schema = json.loads(schema.read())
-
     validate(instance=instance, schema=schema)
